@@ -21,6 +21,12 @@ func main() {
 		println("设置日志输出失败：" + err.Error())
 	}
 
+	//链接数据库
+	err = global.OpenDB()
+	if err != nil {
+		println("连接数据库失败：" + err.Error())
+	}
+
 	//设置时间时区
 	global.TimeLocal, err = time.LoadLocation("Local")
 	if err != nil {
